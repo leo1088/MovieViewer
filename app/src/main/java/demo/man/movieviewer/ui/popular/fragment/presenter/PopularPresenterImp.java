@@ -1,12 +1,11 @@
 package demo.man.movieviewer.ui.popular.fragment.presenter;
 
-import android.os.Build;
 
 import javax.inject.Inject;
 
 import demo.man.movieviewer.BuildConfig;
 import demo.man.movieviewer.data.moviepopular.PagePopular;
-import demo.man.movieviewer.data.moviepopular.Result;
+import demo.man.movieviewer.data.moviepopular.Movie;
 import demo.man.movieviewer.inject.PerFragment;
 import demo.man.movieviewer.net.ApiMovie;
 import demo.man.movieviewer.ui.base.presenter.BasePresenter;
@@ -42,37 +41,29 @@ public final class PopularPresenterImp extends BasePresenter<PopularView> implem
         this.applicationUtil = applicationUtil;
         this.activityUtil = activityUtil;
         this.fragmentUtil = fragmentUtil;
-
     }
 
     @Override
-    public void popularDoSomething() {
-        // Do something here. Maybe make an asynchronous call to fetch data...
-        Result result = null;
-        apiMovie.getListPopular(BuildConfig.TMDB_API_KEY).subscribeOn(Schedulers.io())
+    public void displayMovies() {
+        showLoading();
+        apiMovie.getListPopular(BuildConfig.TMDB_API_KEY)
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<PagePopular>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        MyLog.e("onSubscribe");
-                    }
+                .subscribe(this::onMovieSuccess, this::onMovieFailed);
+    }
 
-                    @Override
-                    public void onNext(PagePopular pagePopular) {
-                        MyLog.e("onNext");
-                    }
+    private void onMovieSuccess(PagePopular pagePopular) {
+        view.showMovies(pagePopular.getMovies());
+    }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        MyLog.e("onError:" + e.getMessage());
-                    }
+    private void showLoading() {
+        view.showLoading();
+    }
 
-                    @Override
-                    public void onComplete() {
-                        MyLog.e("onComplete");
-                    }
-                });
-
-        view.showPopularMovie(result);
+    //    private void onMovieSuccess(List<Movie> results){
+//
+//    }
+    private void onMovieFailed(Throwable throwable) {
+        view.showFailed(throwable);
     }
 }

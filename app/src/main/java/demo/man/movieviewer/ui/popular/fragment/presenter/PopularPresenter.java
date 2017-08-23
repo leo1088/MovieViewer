@@ -7,5 +7,5 @@ import demo.man.movieviewer.ui.base.presenter.Presenter;
  */
 
 public interface PopularPresenter extends Presenter {
-    void popularDoSomething();
+    void displayMovies();
 }
