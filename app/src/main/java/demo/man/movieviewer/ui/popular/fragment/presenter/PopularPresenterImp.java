@@ -4,7 +4,7 @@ package demo.man.movieviewer.ui.popular.fragment.presenter;
 import javax.inject.Inject;
 
 import demo.man.movieviewer.BuildConfig;
-import demo.man.movieviewer.data.moviepopular.PagePopular;
+import demo.man.movieviewer.data.PagePopular;
 import demo.man.movieviewer.inject.PerFragment;
 import demo.man.movieviewer.net.ApiMovie;
 import demo.man.movieviewer.ui.base.presenter.BasePresenter;

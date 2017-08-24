@@ -5,7 +5,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import demo.man.movieviewer.R;
-import demo.man.movieviewer.data.moviepopular.Movie;
+import demo.man.movieviewer.data.Movie;
 import demo.man.movieviewer.ui.base.BaseActivity;
 import demo.man.movieviewer.ui.popular.fragment.view.PopularFragment;
 import demo.man.movieviewer.ui.popular.fragment.view.PopularFragmentListening;

@@ -1,6 +1,6 @@
 package demo.man.movieviewer.ui.popular.fragment.view;
 
-import demo.man.movieviewer.data.moviepopular.Movie;
+import demo.man.movieviewer.data.Movie;
 
 /**
  * Created by leo on 8/24/17.

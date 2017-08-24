@@ -1,6 +1,6 @@
 package demo.man.movieviewer.ui.detail.fragment.presenter;
 
-import demo.man.movieviewer.data.moviepopular.Movie;
+import demo.man.movieviewer.data.Movie;
 import demo.man.movieviewer.ui.base.presenter.Presenter;
 
 /**

@@ -14,7 +14,7 @@ import java.util.List;
 import javax.inject.Inject;
 import butterknife.BindView;
 import demo.man.movieviewer.R;
-import demo.man.movieviewer.data.moviepopular.Movie;
+import demo.man.movieviewer.data.Movie;
 import demo.man.movieviewer.ui.base.view.BaseViewFragment;
 import demo.man.movieviewer.ui.popular.fragment.presenter.PopularPresenter;
 import demo.man.movieviewer.util.alog.MyLog;

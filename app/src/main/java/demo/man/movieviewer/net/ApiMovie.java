@@ -2,8 +2,8 @@ package demo.man.movieviewer.net;
 
 import java.util.List;
 
-import demo.man.movieviewer.data.moviepopular.Movie;
-import demo.man.movieviewer.data.moviepopular.PagePopular;
+import demo.man.movieviewer.data.Movie;
+import demo.man.movieviewer.data.PagePopular;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -16,6 +16,10 @@ public interface ApiMovie {
     //get What are the most popular movies?
     @GET("movie?vote_count.gte=500&language=en&sort_by=vote_average.desc")
     Observable<PagePopular> getListPopular(@Query("api_key") String key);
+
+    @GET("movie?vote_count.gte=500&language=en&sort_by=vote_average.desc")
+    Observable<PagePopular> getListTrailer(@Query("api_key") String key);
+
 
 //    @GET("popular")
 //    Observable<PagePopular> getListPopular(@Query("api_key") String key);

@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +16,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import demo.man.movieviewer.R;
-import demo.man.movieviewer.data.moviepopular.Movie;
+import demo.man.movieviewer.data.Movie;
 import demo.man.movieviewer.ui.base.view.BaseViewFragment;
 import demo.man.movieviewer.ui.detail.fragment.presenter.DetailPresenter;
 import demo.man.movieviewer.util.alog.MyLog;

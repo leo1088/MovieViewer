@@ -1,15 +1,11 @@
 package demo.man.movieviewer.ui.detail;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import demo.man.movieviewer.R;
-import demo.man.movieviewer.data.moviepopular.Movie;
 import demo.man.movieviewer.ui.base.BaseActivity;
 import demo.man.movieviewer.ui.detail.fragment.view.DetailFragment;
-import demo.man.movieviewer.util.alog.MyLog;
-import demo.man.movieviewer.util.define.DfLink;
 
 /**
  * Created by leo on 8/24/17.

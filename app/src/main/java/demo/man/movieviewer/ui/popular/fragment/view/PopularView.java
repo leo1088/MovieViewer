@@ -2,7 +2,7 @@ package demo.man.movieviewer.ui.popular.fragment.view;
 
 import java.util.List;
 
-import demo.man.movieviewer.data.moviepopular.Movie;
+import demo.man.movieviewer.data.Movie;
 import demo.man.movieviewer.ui.base.view.MVPView;
 
 /**

@@ -1,4 +1,4 @@
-package demo.man.movieviewer.data.moviepopular;
+package demo.man.movieviewer.data;
 
 /**
  * Created by leo on 8/22/17.
