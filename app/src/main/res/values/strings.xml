@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MovieViewer</string>
+    <string name="toolbar_title">Movie Items</string>
 </resources>

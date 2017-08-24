@@ -16,4 +16,6 @@ public interface PopularView extends MVPView {
     void showMovies(List<Movie> movies);
 
     void showFailed(Throwable reason);
+
+    void onMemoryClear(int level);
 }

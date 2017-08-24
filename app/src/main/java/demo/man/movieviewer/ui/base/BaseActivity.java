@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -14,12 +15,16 @@ import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasFragmentInjector;
+import demo.man.movieviewer.navigation.Navigator;
 
 /**
  * Created by leo on 8/23/17.
  */
 
-public abstract class BaseActivity extends Activity implements HasFragmentInjector {
+public abstract class BaseActivity extends AppCompatActivity implements HasFragmentInjector {
+
+    @Inject
+    protected Navigator navigator;
 
     @Inject
     @Named(BaseActivityModule.ACTIVITY_FRAGEMENT_MANAGER)

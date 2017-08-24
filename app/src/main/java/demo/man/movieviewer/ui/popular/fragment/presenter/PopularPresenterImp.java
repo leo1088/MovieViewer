@@ -1,6 +1,10 @@
 package demo.man.movieviewer.ui.popular.fragment.presenter;
 
 
+import android.util.Log;
+
+import com.bumptech.glide.Glide;
+
 import javax.inject.Inject;
 
 import demo.man.movieviewer.BuildConfig;
@@ -45,14 +49,37 @@ public final class PopularPresenterImp extends BasePresenter<PopularView> implem
 
     @Override
     public void displayMovies() {
+        MyLog.e("displayMovies");
         showLoading();
         apiMovie.getListPopular(BuildConfig.TMDB_API_KEY)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Observer<PagePopular>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//                        MyLog.e("onSubscribe");
+//                    }
+//
+//                    @Override
+//                    public void onNext(PagePopular pagePopular) {
+//                        MyLog.d("onNext");
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        MyLog.e("onError");
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//                        MyLog.e("onComplete");
+//                    }
+//                });
                 .subscribe(this::onMovieSuccess, this::onMovieFailed);
     }
 
     private void onMovieSuccess(PagePopular pagePopular) {
+        MyLog.e("onMovieSuccess");
         view.showMovies(pagePopular.getMovies());
     }
 
@@ -60,10 +87,15 @@ public final class PopularPresenterImp extends BasePresenter<PopularView> implem
         view.showLoading();
     }
 
-    //    private void onMovieSuccess(List<Movie> results){
-//
-//    }
+
     private void onMovieFailed(Throwable throwable) {
+        MyLog.e("onMovieFailed:" + throwable.getMessage());
         view.showFailed(throwable);
+    }
+
+
+    @Override
+    public void onTrimMemory(int level) {
+        view.onMemoryClear(level);
     }
 }

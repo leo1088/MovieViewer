@@ -27,7 +27,7 @@ public class ApiMovieModule {
     }
 
     @Provides
-//    @Singleton
+    @Singleton
     Retrofit providerRetrofit(@Named(DfLink.NAME_BASE_URL) String baseUrl,
                               Converter.Factory converter,
                               RxJava2CallAdapterFactory rxJava2CallAdapterFactory) {
@@ -39,19 +39,19 @@ public class ApiMovieModule {
     }
 
     @Provides
-//    @Singleton
+    @Singleton
     RxJava2CallAdapterFactory providerRxAdapter() {
         return RxJava2CallAdapterFactory.create();
     }
 
     @Provides
-//    @Singleton
+    @Singleton
     Converter.Factory providerConverter() {
         return GsonConverterFactory.create();
     }
 
     @Provides
-//    @Singleton
+    @Singleton
     ApiMovie providerInterfaceApi(Retrofit retrofit) {
         return retrofit.create(ApiMovie.class);
     }

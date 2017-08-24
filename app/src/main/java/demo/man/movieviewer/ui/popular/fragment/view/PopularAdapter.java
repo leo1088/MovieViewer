@@ -16,6 +16,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.bumptech.glide.request.target.Target;
 
@@ -25,6 +26,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import demo.man.movieviewer.R;
 import demo.man.movieviewer.data.moviepopular.Movie;
+import demo.man.movieviewer.util.alog.MyLog;
+import demo.man.movieviewer.util.define.DfLink;
 
 /**
  * Created by duong on 23/08/2017.
@@ -35,10 +38,13 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularV
     private List<Movie> movies;
     private Context context;
     private PopularView popularView;
+    private RequestOptions requestOptions;
 
     public PopularAdapter(PopularView view, List<Movie> movies) {
         this.movies = movies;
         popularView = view;
+        requestOptions = new RequestOptions();
+        requestOptions.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
     }
 
     @Override
@@ -50,10 +56,13 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularV
 
     @Override
     public void onBindViewHolder(PopularViewHolder holder, int position) {
+        holder.itemView.setOnClickListener(holder);
         holder.movie = movies.get(position);
         holder.name.setText(holder.movie.getTitle());
+        MyLog.e("load image:" + position);
         Glide.with(context)
-                .load(holder.movie.getPosterPath())
+                .load(DfLink.POSTER_PATH + holder.movie.getPosterPath())
+                .apply(requestOptions)
                 .into(holder.poster);
     }
 
@@ -62,7 +71,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularV
         return movies.size();
     }
 
-    public class PopularViewHolder extends RecyclerView.ViewHolder {
+    public class PopularViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.movie_poster)
         ImageView poster;
         @BindView(R.id.title_background)
@@ -70,9 +79,16 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularV
         @BindView(R.id.movie_name)
         TextView name;
         public Movie movie;
+
         public PopularViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+        }
+
+        @Override
+        public void onClick(View view) {
+//            PopularAdapter.this.popularView.onItemClick(movie);
+
         }
     }
 

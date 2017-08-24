@@ -6,5 +6,6 @@ package demo.man.movieviewer.util.define;
 
 public class DfLink {
     public static final String NAME_BASE_URL = "NAME_BASE_URL";
-    public static final String BASE_URL = "https://api.themoviedb.org/3/tv/";
+    public static final String BASE_URL = "https://api.themoviedb.org/3/discover/";
+    public static final String POSTER_PATH = "http://image.tmdb.org/t/p/w342";
 }

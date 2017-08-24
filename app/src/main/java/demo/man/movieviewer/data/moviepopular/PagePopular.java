@@ -20,7 +20,7 @@ public class PagePopular {
     @SerializedName("total_pages")
     @Expose
     private Integer totalPages;
-    @SerializedName("movies")
+    @SerializedName("results")
     @Expose
     private List<Movie> movies = null;
 

@@ -16,16 +16,19 @@ public interface Presenter {
      *                           {@link #onSaveInstanceState(Bundle)}
      */
     void onStart(@Nullable Bundle savedInstanceState);
+
     /**
      * Resumes the presentation. This should be called in the view's (Activity or Fragment)
      * onResume() method.
      */
     void onResume();
+
     /**
      * Pauses the presentation. This should be called in the view's Activity or Fragment)
      * onPause() method.
      */
     void onPause();
+
     /**
      * Save the state of the presentation (if any). This should be called in the view's
      * (Activity or Fragment) onSaveInstanceState().
@@ -33,9 +36,12 @@ public interface Presenter {
      * @param outState the out state to save instance state
      */
     void onSaveInstanceState(Bundle outState);
+
     /**
      * Ends the presentation. This should be called in the view's (Activity or Fragment)
      * onDestroy() or onDestroyView() method respectively.
      */
     void onEnd();
+
+    void onTrimMemory(int level);
 }

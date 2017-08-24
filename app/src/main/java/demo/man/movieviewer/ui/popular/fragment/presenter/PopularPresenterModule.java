@@ -12,7 +12,7 @@ import demo.man.movieviewer.util.define.DfLink;
 /**
  * Created by leo on 8/23/17.
  */
-@Module(includes = ApiMovieModule.class)
+@Module
 public abstract class PopularPresenterModule {
 
     @Binds

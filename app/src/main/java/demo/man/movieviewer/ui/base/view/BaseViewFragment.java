@@ -44,4 +44,10 @@ public abstract class BaseViewFragment<T extends Presenter> extends BaseFragment
         presenter.onEnd();
         super.onDestroyView();
     }
+
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+        presenter.onTrimMemory(level);
+    }
 }
