@@ -18,4 +18,6 @@ public interface PopularView extends MVPView {
     void showFailed(Throwable reason);
 
     void onMemoryClear(int level);
+
+    void onMovieClick(Movie movie);
 }

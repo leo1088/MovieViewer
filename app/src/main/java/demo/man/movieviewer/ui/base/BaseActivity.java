@@ -47,5 +47,6 @@ public abstract class BaseActivity extends AppCompatActivity implements HasFragm
 
     protected final void addFragment(@IdRes int containviewId, Fragment fragment) {
         fragmentManager.beginTransaction().add(containviewId, fragment).commit();
+
     }
 }

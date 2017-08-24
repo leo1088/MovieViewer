@@ -9,6 +9,7 @@ import demo.man.movieviewer.inject.PerActivity;
 import demo.man.movieviewer.inject.PerFragment;
 import demo.man.movieviewer.ui.base.BaseActivityModule;
 import demo.man.movieviewer.ui.popular.fragment.view.PopularFragment;
+import demo.man.movieviewer.ui.popular.fragment.view.PopularFragmentListening;
 import demo.man.movieviewer.ui.popular.fragment.view.PopularFragmentModule;
 
 /**
@@ -24,4 +25,8 @@ public abstract class ListActivityModule {
     @Binds
     @PerActivity
     abstract Activity activity(ListActivity listActivity);
+
+    @Binds
+    @PerActivity
+    abstract PopularFragmentListening popularFragmentListening(ListActivity listActivity);
 }

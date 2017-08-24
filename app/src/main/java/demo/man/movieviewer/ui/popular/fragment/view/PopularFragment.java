@@ -8,12 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.inject.Inject;
 import butterknife.BindView;
 import demo.man.movieviewer.R;
 import demo.man.movieviewer.data.moviepopular.Movie;
@@ -26,6 +24,9 @@ import demo.man.movieviewer.util.alog.MyLog;
  */
 
 public final class PopularFragment extends BaseViewFragment<PopularPresenter> implements PopularView {
+
+    @Inject
+    PopularFragmentListening fragmentListening;
 
     @BindView(R.id.movies_listing)
     RecyclerView moviesListing;
@@ -77,10 +78,10 @@ public final class PopularFragment extends BaseViewFragment<PopularPresenter> im
     }
 
     @Override
-    public void onItemClick(Movie movie) {
-        Snackbar.make(moviesListing, movie.getTitle(), Snackbar.LENGTH_LONG).show();
+    public void onMovieClick(Movie movie) {
+//        Snackbar.make(moviesListing, movie.getTitle(), Snackbar.LENGTH_LONG).show();
+        fragmentListening.onMovieSelected(movie);
     }
-
 
     @Override
     public void onTrimMemory(int level) {

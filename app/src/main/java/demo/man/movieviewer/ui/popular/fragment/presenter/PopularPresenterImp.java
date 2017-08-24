@@ -1,15 +1,10 @@
 package demo.man.movieviewer.ui.popular.fragment.presenter;
 
 
-import android.util.Log;
-
-import com.bumptech.glide.Glide;
-
 import javax.inject.Inject;
 
 import demo.man.movieviewer.BuildConfig;
 import demo.man.movieviewer.data.moviepopular.PagePopular;
-import demo.man.movieviewer.data.moviepopular.Movie;
 import demo.man.movieviewer.inject.PerFragment;
 import demo.man.movieviewer.net.ApiMovie;
 import demo.man.movieviewer.ui.base.presenter.BasePresenter;
@@ -18,9 +13,7 @@ import demo.man.movieviewer.util.PerActivityUtil;
 import demo.man.movieviewer.util.PerApplicationUtil;
 import demo.man.movieviewer.util.PerFragmentUtil;
 import demo.man.movieviewer.util.alog.MyLog;
-import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -54,27 +47,6 @@ public final class PopularPresenterImp extends BasePresenter<PopularView> implem
         apiMovie.getListPopular(BuildConfig.TMDB_API_KEY)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new Observer<PagePopular>() {
-//                    @Override
-//                    public void onSubscribe(Disposable d) {
-//                        MyLog.e("onSubscribe");
-//                    }
-//
-//                    @Override
-//                    public void onNext(PagePopular pagePopular) {
-//                        MyLog.d("onNext");
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable e) {
-//                        MyLog.e("onError");
-//                    }
-//
-//                    @Override
-//                    public void onComplete() {
-//                        MyLog.e("onComplete");
-//                    }
-//                });
                 .subscribe(this::onMovieSuccess, this::onMovieFailed);
     }
 
@@ -98,4 +70,5 @@ public final class PopularPresenterImp extends BasePresenter<PopularView> implem
     public void onTrimMemory(int level) {
         view.onMemoryClear(level);
     }
+
 }

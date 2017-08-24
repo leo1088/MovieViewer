@@ -87,8 +87,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularV
 
         @Override
         public void onClick(View view) {
-//            PopularAdapter.this.popularView.onItemClick(movie);
-
+            PopularAdapter.this.popularView.onMovieClick(movie);
         }
     }
 

@@ -7,6 +7,8 @@ import dagger.Module;
 import dagger.android.AndroidInjectionModule;
 import dagger.android.ContributesAndroidInjector;
 import demo.man.movieviewer.inject.PerActivity;
+import demo.man.movieviewer.ui.detail.DetailActivity;
+import demo.man.movieviewer.ui.detail.DetailActivityModule;
 import demo.man.movieviewer.ui.popular.ListActivity;
 import demo.man.movieviewer.ui.popular.ListActivityModule;
 
@@ -22,4 +24,8 @@ abstract class AppModule {
     @PerActivity
     @ContributesAndroidInjector(modules = ListActivityModule.class)
     abstract ListActivity listActivityInjector();
+
+    @PerActivity
+    @ContributesAndroidInjector(modules = DetailActivityModule.class)
+    abstract DetailActivity detailActivityInjector();
 }

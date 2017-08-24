@@ -10,6 +10,8 @@ import dagger.android.ContributesAndroidInjector;
 import demo.man.movieviewer.inject.PerActivity;
 import demo.man.movieviewer.inject.PerFragment;
 import demo.man.movieviewer.ui.base.BaseActivityModule;
+import demo.man.movieviewer.ui.detail.fragment.view.DetailFragment;
+import demo.man.movieviewer.ui.detail.fragment.view.DetailFragmentModule;
 
 /**
  * Created by leo on 8/24/17.
@@ -21,5 +23,10 @@ public abstract class DetailActivityModule {
     abstract Activity activity(DetailActivity activity);
 
     //add fragment thi them vo
+    @PerFragment
+    @ContributesAndroidInjector(modules = DetailFragmentModule.class)
+    abstract DetailFragment detailFragmentInjector();
+
+    //khong xai listening
 
 }
