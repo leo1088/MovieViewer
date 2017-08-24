@@ -69,6 +69,7 @@ public final class DetailFragment extends BaseViewFragment<DetailPresenter> impl
 //        View vInclude = inflater.inflate(R.layout.fragment_detail_layout, (ViewGroup) v, true);
 //        ButterKnife.bind(this, vInclude);
         return v;
+
     }
 
     @Override
