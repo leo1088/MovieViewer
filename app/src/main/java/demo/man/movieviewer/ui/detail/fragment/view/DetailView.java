@@ -1,6 +1,10 @@
 package demo.man.movieviewer.ui.detail.fragment.view;
 
+import java.util.List;
+
 import demo.man.movieviewer.data.Movie;
+import demo.man.movieviewer.data.Review;
+import demo.man.movieviewer.data.Trailer;
 import demo.man.movieviewer.ui.base.view.MVPView;
 
 /**
@@ -8,7 +12,10 @@ import demo.man.movieviewer.ui.base.view.MVPView;
  */
 
 public interface DetailView extends MVPView {
+
     void displayMovie(Movie movie);
-    void displayTrailer(Movie movie);
-    void displayReviews(Movie movie);
+
+    void displayTrailer(List<Trailer.Result> trailers);
+
+    void displayReviews(List<Review.Result> reviews);
 }

@@ -9,6 +9,6 @@ import demo.man.movieviewer.ui.base.presenter.Presenter;
 
 public interface DetailPresenter extends Presenter {
     void showMovieDetail(Movie movie);
-    void showTrailers(Movie movie);
-    void showReviews(Movie movie);
+    void showTrailers(int id);
+    void showReviews(int id);
 }

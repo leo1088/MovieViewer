@@ -17,17 +17,12 @@ public class DetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_activity_layout);
         if (savedInstanceState == null) {
-            //add fragment detail sau
             Bundle b = getIntent().getExtras();
             if (b != null) {
-//                Movie movie = b.getParcelable(DfLink.MOVIE_BUNDLE);
                 DetailFragment detailFragment = new DetailFragment();
                 detailFragment.setArguments(b);
                 addFragment(R.id.detail_container, detailFragment);
             }
-
         }
-
-
     }
 }
