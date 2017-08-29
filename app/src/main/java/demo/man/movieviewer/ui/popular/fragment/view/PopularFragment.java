@@ -1,5 +1,6 @@
 package demo.man.movieviewer.ui.popular.fragment.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -96,8 +97,6 @@ public final class PopularFragment extends BaseViewFragment<PopularPresenter> im
         adapter = new PopularAdapter(this, movies);
         moviesListing.setAdapter(adapter);
     }
-
-
 }
 
 

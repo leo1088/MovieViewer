@@ -2,6 +2,8 @@ package demo.man.movieviewer.ui.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 
 import demo.man.movieviewer.R;
 import demo.man.movieviewer.ui.base.BaseActivity;
@@ -25,4 +27,15 @@ public class DetailActivity extends BaseActivity {
             }
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+//                NavUtils.navigateUpFromSameTask(this);
+                finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

@@ -1,5 +1,7 @@
 package demo.man.movieviewer.ui.detail.fragment.presenter;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import demo.man.movieviewer.BuildConfig;
@@ -12,6 +14,7 @@ import demo.man.movieviewer.net.ApiMovie;
 import demo.man.movieviewer.ui.base.presenter.BasePresenter;
 import demo.man.movieviewer.ui.detail.fragment.view.DetailView;
 import demo.man.movieviewer.util.alog.MyLog;
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 

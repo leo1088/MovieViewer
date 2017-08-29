@@ -16,4 +16,14 @@
         <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
+    <style name="CollapsedToolbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ExpandedToolbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <string name="movie_details">Movie Details</string>
 </resources>

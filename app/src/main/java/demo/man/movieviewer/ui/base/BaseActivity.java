@@ -49,4 +49,6 @@ public abstract class BaseActivity extends AppCompatActivity implements HasFragm
         fragmentManager.beginTransaction().add(containviewId, fragment).commit();
 
     }
+
+
 }

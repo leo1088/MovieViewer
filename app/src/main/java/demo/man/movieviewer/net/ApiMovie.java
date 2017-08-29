@@ -16,9 +16,13 @@ import retrofit2.http.Query;
  */
 
 public interface ApiMovie {
+
     //get What are the most popular movies?
-    @GET("discover/movie?vote_count.gte=500&language=en&sort_by=vote_average.desc")
+    @GET("discover/movie?language=en&sort_by=popularity.desc")
     Observable<PagePopular> getListPopular(@Query("api_key") String key);
+
+    @GET("discover/movie?vote_count.gte=500&language=en&sort_by=vote_average.desc")
+    Observable<PagePopular> getListHighestRate(@Query("api_key") String key);
 
     @GET("movie/{id}/videos")
     Observable<Trailer> getListTrailer(@Path("id") String id, @Query("api_key") String key);

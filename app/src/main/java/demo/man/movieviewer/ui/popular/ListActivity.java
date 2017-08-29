@@ -2,6 +2,7 @@ package demo.man.movieviewer.ui.popular;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 
 import demo.man.movieviewer.R;
@@ -13,15 +14,18 @@ import demo.man.movieviewer.util.define.DfLink;
 
 public class ListActivity extends BaseActivity implements PopularFragmentListening {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("tag", "onCreate");
         setContentView(R.layout.popular_layout);
         setToolbar();
         if (null == savedInstanceState) {
             addFragment(R.id.fragment_container, new PopularFragment());
         }
-    }
+        }
+
 
     private void setToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
